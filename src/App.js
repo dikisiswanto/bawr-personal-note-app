@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import ConfirmDialog from './components/ConfirmDialog';
 import Header from './components/Header';
