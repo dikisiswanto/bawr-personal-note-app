@@ -14,7 +14,7 @@ export default function SearchResultContainer({
       id="search-results"
       aria-labelledby="tab-search-result"
       role="tabpanel"
-      tabIndex="0"
+      tabIndex={0}
     >
       <h2>
         Menampilkan catatan dengan kata kunci

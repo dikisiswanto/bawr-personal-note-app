@@ -10,7 +10,7 @@ export default function ActiveNoteContainer({
       id="active-notes"
       aria-labelledby="tab-active-notes"
       role="tabpanel"
-      tabIndex="0"
+      tabIndex={0}
     >
       <h2 className="text-xl font-bold tracking-wide text-primary">Catatan Aktif</h2>
       <NoteList

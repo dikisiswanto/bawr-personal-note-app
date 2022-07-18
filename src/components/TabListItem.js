@@ -16,11 +16,11 @@ export default function TabListItem({
 
   return (
     <a
-      className={`${className} ${
+      className={`${className ?? ''} ${
         type === 'primary'
           ? 'font-semibold'
           : `${!isTabActive ? 'hover:bg-gray-100/30' : ''} lg:px-5 lg:pl-8`
-      } inline-flex w-full justify-between gap-2 px-3 py-3 transition`}
+      } flex justify-between gap-2 px-3 py-3 transition`}
       href="#!"
       role="tab"
       aria-selected={isTabActive}

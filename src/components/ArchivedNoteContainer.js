@@ -13,7 +13,7 @@ export default function ArchivedNoteContainer({
       id="archived-notes"
       aria-labelledby="tab-archive-notes"
       role="tabpanel"
-      tabIndex="0"
+      tabIndex={0}
     >
       <h2 className="text-xl font-bold tracking-wide text-primary">Diarsipkan</h2>
       <NoteList

@@ -66,12 +66,13 @@ export default function NoteForm({
     <form
       action="#"
       method="post"
-      className={`${activeTabContent === 'form' ? 'space-y-5' : 'hidden'}`}
+      className="space-y-5"
+      aria-hidden={activeTabContent !== 'form'}
       id="form"
       data-action="add"
       aria-labelledby="tab-form"
       role="tabpanel"
-      tabIndex="0"
+      tabIndex={0}
       onSubmit={(e) => onAddNote(e)}
     >
       <h2 className="text-xl font-bold tracking-wide text-primary">Tambah Catatan Baru</h2>
