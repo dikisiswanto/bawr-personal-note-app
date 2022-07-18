@@ -17,7 +17,7 @@ export default function SearchResultContainer({
       tabIndex="0"
     >
       <h2>
-        Menampilkan buku dengan kata kunci
+        Menampilkan catatan dengan kata kunci
         {' '}
         <strong>{query}</strong>
       </h2>
