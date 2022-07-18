@@ -31,6 +31,9 @@ jobs:
         run: |
           yarn install
           yarn build
-          
+
       - name: Deploy
-        run: yarn deploy
+        run: |
+          git config --global user.email "dickyachmady@gmail.com"
+          git config --global user.name "Diki Siswanto"
+          yarn deploy
