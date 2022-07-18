@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  [role="tab"][aria-selected="true"] {
+    @apply bg-gray-300/70 text-primary;
+  }
+
+  [role="tabpanel"][aria-hidden="true"] {
+    @apply hidden;
+  }
+
+  .toast {
+    @apply invisible fixed top-5 right-0 mx-auto mt-5 mr-2 inline-block -translate-y-full transform rounded-md py-3 px-6 text-center opacity-0 shadow-lg transition-all duration-500 lg:mr-10;
+  }
+
+  .toast.show {
+    @apply visible translate-y-0 opacity-100;
+  }
+
+  .toast.success {
+    @apply bg-emerald-500 text-white;
+  }
+
+  .toast.error {
+    @apply bg-red-500 text-white;
+  }
+
+  .toast.warning {
+    @apply bg-orange-500 text-white;
+  }
+
+  .toast.info {
+    @apply bg-blue-500 text-white;
+  }
+
+  [role="alertdialog"] {
+    @apply fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-gray-800/30;
+  }
+
+  [role="alertdialog"] .dialog-content {
+    @apply relative mx-auto w-10/12 space-y-2 rounded-md bg-white px-4 py-3 shadow-lg lg:w-1/3;
+  }
+
+  button[type="submit"][disabled] {
+    @apply cursor-not-allowed opacity-50;
+  }
+}
