@@ -1,5 +1,10 @@
 export default function TabListItem({
-  menuItem, type, className, onMenuItemClick, activeTab,
+  menuItem,
+  type,
+  className,
+  onMenuItemClick,
+  activeTab,
+  dataLength,
 }) {
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -14,7 +19,7 @@ export default function TabListItem({
       className={`${className} ${
         type === 'primary'
           ? 'font-semibold'
-          : `${isTabActive ? 'hover:bg-gray-100/30' : ''} lg:px-5 lg:pl-8`
+          : `${!isTabActive ? 'hover:bg-gray-100/30' : ''} lg:px-5 lg:pl-8`
       } inline-flex w-full justify-between gap-2 px-3 py-3 transition`}
       href="#!"
       role="tab"
@@ -38,7 +43,7 @@ export default function TabListItem({
         <span className="hidden lg:block">{menuItem.title}</span>
       </div>
       {type === 'secondary' && (
-        <span className="count-label hidden lg:inline-block" data-name={menuItem.id} />
+        <span className="count-label hidden lg:inline-block">{!!dataLength && dataLength}</span>
       )}
     </a>
   );

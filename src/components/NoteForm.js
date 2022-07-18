@@ -1,45 +1,66 @@
 import { useEffect, useState } from 'react';
+import FormControl from './FormControl';
+import FormInput from './FormInput';
+import FormTextArea from './FormTextArea';
 
 export default function NoteForm({
   activeTabContent, setNotes, notes, setNotification,
 }) {
-  const initialFormError = { title: '', content: '' };
+  const initialFormError = { title: '', body: '' };
   const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
+  const [body, setBody] = useState('');
   const [formError, setFormError] = useState(initialFormError);
   const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [titleLength, setTitleLength] = useState(0);
+
+  const handleTitleChange = (value) => {
+    setTitle(value);
+    setTitleLength(value.length);
+  };
 
   const onAddNote = (e) => {
     e.preventDefault();
     setFormError(initialFormError);
 
-    if (title.trim() === '') {
-      setTitle(title.trim());
+    if (!title.trim()) {
       setFormError((prevErrorState) => ({ ...prevErrorState, title: 'Judul tidak boleh kosong' }));
     }
-    if (content.trim() === '') {
-      setContent(content.trim());
+    if (!body.trim()) {
       setFormError((prevErrorState) => ({
         ...prevErrorState,
-        content: 'Isi catatan tidak boleh kosong',
+        body: 'Isi catatan tidak boleh kosong',
       }));
     }
-    if (title.trim() !== '' && content.trim() !== '') {
+    if (title.trim() !== '' && body.trim() !== '') {
       setFormError(initialFormError);
       setTitle('');
-      setContent('');
-      setNotes([...notes, { title: title.trim(), content: content.trim() }]);
+      setBody('');
+      setTitleLength(0);
+      const note = {
+        id: +new Date(),
+        title: title.trim(),
+        body: body.trim(),
+        archived: false,
+        createdAt: new Date(),
+      };
+      setNotes([...notes, note]);
       setNotification('Catatan berhasil ditambahkan');
     }
   };
 
   useEffect(() => {
-    if (title && content) {
-      setButtonDisabled(false);
-    } else {
-      setButtonDisabled(true);
+    if (!title.trim()) {
+      setFormError((prevErrorState) => ({ ...prevErrorState, title: '' }));
     }
-  }, [title, content]);
+    if (!body.trim()) {
+      setFormError((prevErrorState) => ({ ...prevErrorState, body: '' }));
+    }
+    setFormError((prevState) => ({
+      ...prevState,
+      title: titleLength > 50 ? 'Judul tidak boleh lebih dari 50 karakter' : '',
+    }));
+    setButtonDisabled(!(title.trim() !== '' && body.trim() !== '' && titleLength <= 50));
+  }, [title, body, titleLength]);
 
   return (
     <form
@@ -53,34 +74,38 @@ export default function NoteForm({
       tabIndex="0"
       onSubmit={(e) => onAddNote(e)}
     >
-      <h2 className="text-xl font-bold" id="form-title">
-        Tambah Catatan Baru
-      </h2>
+      <h2 className="text-xl font-bold tracking-wide text-primary">Tambah Catatan Baru</h2>
       <div className="flex flex-col space-y-3">
-        <label htmlFor="title" className="text-sm text-gray-700/90">
-          Judul
-        </label>
-        <input
-          type="text"
-          id="title"
-          className="h-10 rounded-md border border-gray-300/90 bg-gray-200/50 px-3 focus:border-primary focus:outline-none"
-          value={title}
-          onInput={({ target }) => setTitle(target.value)}
-        />
-        {formError.title && <p className="text-xs text-red-500">{formError.title}</p>}
+        <FormControl label="title" title="Judul">
+          <FormInput
+            value={title}
+            onInput={handleTitleChange}
+            isError={!!formError.title}
+            label="title"
+          />
+          {titleLength > 0 && titleLength <= 50 && (
+            <p className={`${titleLength < 40 ? 'text-green-500' : 'text-yellow-500'} text-xs`}>
+              Judul bersisa
+              {' '}
+              {50 - titleLength}
+              {' '}
+              karakter lagi
+            </p>
+          )}
+          {formError.title && <p className="text-xs text-red-500">{formError.title}</p>}
+        </FormControl>
       </div>
       <div className="flex flex-col space-y-3">
-        <label htmlFor="content" className="text-sm text-gray-700/90">
-          Isi Catatan
-        </label>
-        <textarea
-          id="content"
-          rows={5}
-          className="rounded-md border border-gray-300/90 bg-gray-200/50 px-3 py-2 focus:border-primary focus:outline-none"
-          value={content}
-          onChange={({ target }) => setContent(target.value)}
-        />
-        {formError.content && <p className="text-xs text-red-500">{formError.content}</p>}
+        <FormControl label="body" title="Isi Catatan">
+          <FormTextArea
+            value={body}
+            rows={5}
+            onInput={setBody}
+            isError={!!formError.body}
+            label="body"
+          />
+          {formError.body && <p className="text-xs text-red-500">{formError.body}</p>}
+        </FormControl>
       </div>
       <div className="py-3">
         <button

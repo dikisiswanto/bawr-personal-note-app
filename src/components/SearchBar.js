@@ -1,12 +1,22 @@
-export default function SearchBar({ onSearch }) {
+export default function SearchBar({ onSearch, setQuery, query }) {
   return (
-    <form action="#" className="relative hidden px-5 lg:block" id="search-form" onSubmit={onSearch}>
+    <form
+      action="#"
+      className="relative hidden px-5 lg:block"
+      id="search-form"
+      onSubmit={(e) => {
+        e.preventDefault();
+        onSearch();
+      }}
+    >
       <input
         type="text"
         className="h-10 w-full rounded-md bg-white px-3 text-sm shadow transition focus:shadow-lg focus:outline-none"
         name="query"
         autoComplete="off"
         placeholder="Cari catatan..."
+        value={query}
+        onInput={(e) => setQuery(e.target.value)}
       />
       <svg
         xmlns="http://www.w3.org/2000/svg"

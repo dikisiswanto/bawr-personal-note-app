@@ -1,6 +1,8 @@
 import TabListItem from './TabListItem';
 
-export default function TabList({ menu, onMenuItemClick, activeTab }) {
+export default function TabList({
+  menu, onMenuItemClick, activeTab, notes,
+}) {
   const { primary, secondary } = menu;
 
   return (
@@ -21,6 +23,9 @@ export default function TabList({ menu, onMenuItemClick, activeTab }) {
           type="secondary"
           onMenuItemClick={onMenuItemClick}
           activeTab={activeTab}
+          dataLength={
+            notes.filter((note) => note.archived === (menuItem.id === 'archived-notes')).length
+          }
           key={menuItem.id}
         />
       ))}
