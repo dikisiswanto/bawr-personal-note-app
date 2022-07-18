@@ -1,5 +1,5 @@
 import ArchivedNoteContainer from './ArchivedNoteContainer';
-import ActiveNoteContainer from './ActiveNoteContainer copy';
+import ActiveNoteContainer from './ActiveNoteContainer';
 import NoteForm from './NoteForm';
 import SearchResultContainer from './SearchResultContainer';
 
