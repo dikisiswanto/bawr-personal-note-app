@@ -25,8 +25,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies 🔧 and deploy 🚀
+      - name: Install dependencies and build
         run: |
           yarn install
           yarn build
-          yarn deploy
+      - name: Deploy
+        uses: actions/checkout@v3
+        with: 
+          token: ${{ secrets.GITHUB_TOKEN }}
+        run: yarn deploy
