@@ -5,10 +5,11 @@ import MainContent from './components/MainContent';
 import Sidebar from './components/Sidebar';
 import Toast from './components/Toast';
 import MENU from './data/menu';
+import { getInitialData } from './utils';
 
 function App() {
   const [activeTab, setActiveTab] = useState('form');
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(getInitialData());
   const [notification, setNotification] = useState('');
   const [showNotification, setShowNotification] = useState(false);
   const [showDialog, setShowDialog] = useState(false);
