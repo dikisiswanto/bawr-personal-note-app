@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react';
-import ConfirmDialog from './components/ConfirmDialog';
-import Header from './components/Header';
-import MainContent from './components/MainContent';
-import Sidebar from './components/Sidebar';
-import Toast from './components/Toast';
-import MENU from './data/menu';
-import { getInitialData } from './utils';
+import ConfirmDialog from 'components/ConfirmDialog';
+import Header from 'components/Header';
+import MainContent from 'components/MainContent';
+import Sidebar from 'components/Sidebar';
+import Toast from 'components/Toast';
+import MENU from 'data/menu';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
+import { getInitialData } from 'utils';
 
 function App() {
   const [activeTab, setActiveTab] = useState('form');

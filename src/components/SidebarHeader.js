@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 export default function SidebarHeader() {
   return (
     <h2 className="flex items-center gap-4 py-3 px-2 font-bold lg:px-5">

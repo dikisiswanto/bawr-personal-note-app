@@ -1,7 +1,8 @@
-import ArchivedNoteContainer from './ArchivedNoteContainer';
-import ActiveNoteContainer from './ActiveNoteContainer';
-import NoteForm from './NoteForm';
-import SearchResultContainer from './SearchResultContainer';
+import ActiveNoteContainer from 'components/ActiveNoteContainer';
+import ArchivedNoteContainer from 'components/ArchivedNoteContainer';
+import NoteForm from 'components/NoteForm';
+import SearchResultContainer from 'components/SearchResultContainer';
+import * as React from 'react';
 
 export default function MainContent({
   activeTabContent,

@@ -1,4 +1,5 @@
-import NoteList from './NoteList';
+import NoteList from 'components/NoteList';
+import * as React from 'react';
 
 export default function ActiveNoteContainer({
   notes, activeTabContent, onMarkNote, onDeleteNote,

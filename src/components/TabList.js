@@ -1,4 +1,5 @@
-import TabListItem from './TabListItem';
+import TabListItem from 'components/TabListItem';
+import * as React from 'react';
 
 export default function TabList({
   menu, onMenuItemClick, activeTab, notes,
@@ -13,6 +14,7 @@ export default function TabList({
         onMenuItemClick={onMenuItemClick}
         activeTab={activeTab}
         className="mb-3 bg-gray-300/30"
+        dataLength={0}
       />
 
       <h3 className="hidden py-3 px-5 font-semibold text-gray-500 lg:block">Daftar Catatan</h3>
@@ -27,6 +29,7 @@ export default function TabList({
             notes.filter((note) => note.archived === (menuItem.id === 'archived-notes')).length
           }
           key={menuItem.id}
+          className=""
         />
       ))}
     </div>

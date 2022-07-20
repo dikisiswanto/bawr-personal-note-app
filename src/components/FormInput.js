@@ -1,3 +1,6 @@
+// @ts-nocheck
+import * as React from 'react';
+
 export default function FormInput({
   type, label, className, value, onInput, isError,
 }) {

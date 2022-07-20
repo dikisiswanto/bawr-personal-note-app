@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 export default function Header() {
   return (
     <header className="bg-primary py-4 text-center text-white shadow-md">

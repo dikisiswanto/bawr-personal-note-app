@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
-import FormControl from './FormControl';
-import FormInput from './FormInput';
-import FormTextArea from './FormTextArea';
+import FormControl from 'components/FormControl';
+import FormInput from 'components/FormInput';
+import FormTextArea from 'components/FormTextArea';
+import * as React from 'react';
+import { useState, useEffect } from 'react';
 
 export default function NoteForm({
   activeTabContent, setNotes, notes, setNotification,
@@ -83,6 +84,8 @@ export default function NoteForm({
             onInput={handleTitleChange}
             isError={!!formError.title}
             label="title"
+            type="text"
+            className=""
           />
           {titleLength > 0 && titleLength <= 50 && (
             <p className={`${titleLength < 40 ? 'text-green-500' : 'text-yellow-500'} text-xs`}>
@@ -104,6 +107,7 @@ export default function NoteForm({
             onInput={setBody}
             isError={!!formError.body}
             label="body"
+            className=""
           />
           {formError.body && <p className="text-xs text-red-500">{formError.body}</p>}
         </FormControl>

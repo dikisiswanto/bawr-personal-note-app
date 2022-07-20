@@ -1,6 +1,7 @@
-import SearchBar from './SearchBar';
-import SidebarHeader from './SidebarHeader';
-import TabList from './TabList';
+import SearchBar from 'components/SearchBar';
+import SidebarHeader from 'components/SidebarHeader';
+import TabList from 'components/TabList';
+import * as React from 'react';
 
 export default function Sidebar({
   menu,

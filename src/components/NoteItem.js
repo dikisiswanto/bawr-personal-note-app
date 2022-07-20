@@ -1,4 +1,5 @@
-import { showFormattedDate } from '../utils';
+import * as React from 'react';
+import { showFormattedDate } from 'utils';
 
 export default function NoteItem({
   note, actionButtonText, onMarkNote, onDeleteNote,

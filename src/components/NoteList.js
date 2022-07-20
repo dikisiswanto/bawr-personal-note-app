@@ -1,4 +1,5 @@
-import NoteItem from './NoteItem';
+import NoteItem from 'components/NoteItem';
+import * as React from 'react';
 
 export default function NoteList({
   notes, actionButtonText, onMarkNote, onDeleteNote,

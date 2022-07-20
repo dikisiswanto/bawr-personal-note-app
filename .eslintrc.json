@@ -3,7 +3,13 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "airbnb"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -25,5 +31,14 @@
       }
     ],
     "linebreak-style": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["src", "node_modules"],
+        "extensions": [".js", ".jsx"],
+        "paths": ["src"]
+      }
+    }
   }
 }

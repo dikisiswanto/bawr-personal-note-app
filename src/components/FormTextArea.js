@@ -1,3 +1,6 @@
+// @ts-nocheck
+import * as React from 'react';
+
 export default function FormTextArea({
   label, className, value, onInput, isError, rows,
 }) {
