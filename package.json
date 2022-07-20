@@ -21,7 +21,7 @@
     "lint:fix": "eslint ./src/* --fix",
     "prettier:fix": "prettier ./src/* --write",
     "prepare": "husky install",
-    "predeploy": "npm run build",
+    "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
