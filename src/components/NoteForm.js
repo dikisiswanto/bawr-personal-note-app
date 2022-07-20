@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import FormControl from 'components/FormControl';
 import FormInput from 'components/FormInput';
 import FormTextArea from 'components/FormTextArea';
@@ -88,7 +89,12 @@ export default function NoteForm({
             className=""
           />
           {titleLength > 0 && titleLength <= 50 && (
-            <p className={`${titleLength < 40 ? 'text-green-500' : 'text-yellow-500'} text-xs`}>
+            <p
+              className={clsx('text-xs', {
+                'text-emerald-500': titleLength < 40,
+                'text-yellow-500': titleLength >= 40,
+              })}
+            >
               Judul bersisa
               {' '}
               {50 - titleLength}

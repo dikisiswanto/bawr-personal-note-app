@@ -1,4 +1,5 @@
 // @ts-nocheck
+import clsx from 'clsx';
 import * as React from 'react';
 
 export default function FormTextArea({
@@ -7,9 +8,10 @@ export default function FormTextArea({
   return (
     <textarea
       id={label}
-      className={`rounded-md border bg-gray-200/50 px-3 py-2 focus:outline-none ${
-        className ?? ''
-      } ${isError ? 'border-red-500' : 'border-gray-300/90 focus:border-primary'}`}
+      className={clsx('rounded-md border bg-gray-200/50 px-3 py-2 focus:outline-none', className, {
+        'border-red-500': isError,
+        'border-gray-300/90 focus:border-primary': !isError,
+      })}
       value={value}
       onInput={({ target }) => onInput(target.value)}
       rows={rows}
