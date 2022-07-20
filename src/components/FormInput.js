@@ -1,4 +1,5 @@
 // @ts-nocheck
+import clsx from 'clsx';
 import * as React from 'react';
 
 export default function FormInput({
@@ -8,9 +9,10 @@ export default function FormInput({
     <input
       type={type}
       id={label}
-      className={`h-10 rounded-md border bg-gray-200/50 px-3 focus:outline-none ${
-        className ?? ''
-      } ${isError ? 'border-red-500' : 'border-gray-300/90 focus:border-primary'}`}
+      className={clsx('h-10 rounded-md border bg-gray-200/50 px-3 focus:outline-none', className, {
+        'border-red-500': isError,
+        'border-gray-300/90 focus:border-primary': !isError,
+      })}
       value={value}
       onInput={({ target }) => onInput(target.value)}
     />

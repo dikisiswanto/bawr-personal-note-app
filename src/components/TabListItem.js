@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import * as React from 'react';
 
 export default function TabListItem({
@@ -18,11 +19,11 @@ export default function TabListItem({
 
   return (
     <a
-      className={`${className ?? ''} ${
-        type === 'primary'
-          ? 'font-semibold'
-          : `${!isTabActive ? 'hover:bg-gray-100/30' : ''} lg:px-5 lg:pl-8`
-      } flex justify-between gap-2 px-3 py-3 transition`}
+      className={clsx('flex justify-between gap-2 px-3 py-3 transition', className, {
+        'hover:bg-gray-100/30': !isTabActive && type !== 'primary',
+        'font-semibold': type === 'primary',
+        'lg:px-5 lg:pl-8': type !== 'primary',
+      })}
       href="#!"
       role="tab"
       aria-selected={isTabActive}
