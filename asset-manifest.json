@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bawr-personal-note-app/static/css/main.1ba8b237.css",
-    "main.js": "/bawr-personal-note-app/static/js/main.729561f0.js",
+    "main.css": "/bawr-personal-note-app/static/css/main.54a6ab35.css",
+    "main.js": "/bawr-personal-note-app/static/js/main.502532b2.js",
     "static/js/787.33469bf0.chunk.js": "/bawr-personal-note-app/static/js/787.33469bf0.chunk.js",
     "index.html": "/bawr-personal-note-app/index.html",
-    "main.1ba8b237.css.map": "/bawr-personal-note-app/static/css/main.1ba8b237.css.map",
-    "main.729561f0.js.map": "/bawr-personal-note-app/static/js/main.729561f0.js.map",
+    "main.54a6ab35.css.map": "/bawr-personal-note-app/static/css/main.54a6ab35.css.map",
+    "main.502532b2.js.map": "/bawr-personal-note-app/static/js/main.502532b2.js.map",
     "787.33469bf0.chunk.js.map": "/bawr-personal-note-app/static/js/787.33469bf0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ba8b237.css",
-    "static/js/main.729561f0.js"
+    "static/css/main.54a6ab35.css",
+    "static/js/main.502532b2.js"
   ]
 }
