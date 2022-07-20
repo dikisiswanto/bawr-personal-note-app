@@ -18,8 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "prettier:fix": "prettier ./src/**/*.js --write",
+    "lint:fix": "eslint ./src/* --fix",
+    "prettier:fix": "prettier ./src/* --write",
     "prepare": "husky install",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
