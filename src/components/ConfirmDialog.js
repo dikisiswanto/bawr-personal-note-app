@@ -9,12 +9,12 @@ export default function ConfirmDialog({
         <div className="flex justify-end gap-x-3 pt-3">
           <button
             type="button"
-            className="bg-red-500/20 px-3 py-2 text-red-600"
+            className="bg-red-400/20 px-3 py-2 text-red-700 rounded"
             onClick={() => onConfirm()}
           >
             Hapus
           </button>
-          <button type="button" className="bg-slate-300 px-3 py-2" onClick={() => onCancel()}>
+          <button type="button" className="bg-slate-300 px-3 py-2 rounded" onClick={() => onCancel()}>
             Batal
           </button>
         </div>
