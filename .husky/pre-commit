@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 yarn lint-staged && git add -A .
-yarn test a --watchAll=false
+yarn test --watchAll=false
