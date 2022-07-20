@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es6",
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": false,
     "target": "es5",
@@ -13,7 +13,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "paths": {
-      "@*": ["*"]
+      "*": ["*"]
     }
   },
   "include": ["src"],
