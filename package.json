@@ -18,8 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
-    "lint:fix": "eslint ./src/* --fix",
-    "prettier:fix": "prettier ./src/* --write",
+    "lint:fix": "eslint ./src --fix",
+    "prettier:fix": "prettier ./src --write",
     "prepare": "husky install",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build"
@@ -31,15 +31,10 @@
     ]
   },
   "lint-staged": {
-    "src/*": [
+    "src/": [
       "prettier --write",
       "eslint --fix"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "browserslist": {
     "production": [

@@ -1,4 +1,4 @@
-const getInitialData = () => ([
+const getInitialData = () => [
   {
     id: 1,
     title: 'Babel',
@@ -41,7 +41,7 @@ const getInitialData = () => ([
     createdAt: '2022-04-14T04:27:34.572Z',
     archived: false,
   },
-]);
+];
 
 const showFormattedDate = (date) => {
   const options = {
