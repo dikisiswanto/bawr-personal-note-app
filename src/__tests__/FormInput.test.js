@@ -38,7 +38,7 @@ describe('FormInput element', () => {
   });
 
   it('Should update value when typing in input', async () => {
-    render(<MockedFormInput isError={false} value="" />);
+    render(<MockedFormInput isError={false} />);
     const inputElement = screen.getByRole('textbox', { name: 'Judul' });
     userEvent.type(inputElement, 'Babel');
     expect(inputElement.value).toBe('Babel');
