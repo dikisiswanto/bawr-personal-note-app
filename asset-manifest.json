@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/bawr-personal-note-app/static/css/main.54a6ab35.css",
-    "main.js": "/bawr-personal-note-app/static/js/main.a31e4d55.js",
+    "main.css": "/bawr-personal-note-app/static/css/main.f6ad3d8f.css",
+    "main.js": "/bawr-personal-note-app/static/js/main.11536e3b.js",
     "static/js/787.33469bf0.chunk.js": "/bawr-personal-note-app/static/js/787.33469bf0.chunk.js",
     "index.html": "/bawr-personal-note-app/index.html",
-    "main.54a6ab35.css.map": "/bawr-personal-note-app/static/css/main.54a6ab35.css.map",
-    "main.a31e4d55.js.map": "/bawr-personal-note-app/static/js/main.a31e4d55.js.map",
+    "main.f6ad3d8f.css.map": "/bawr-personal-note-app/static/css/main.f6ad3d8f.css.map",
+    "main.11536e3b.js.map": "/bawr-personal-note-app/static/js/main.11536e3b.js.map",
     "787.33469bf0.chunk.js.map": "/bawr-personal-note-app/static/js/787.33469bf0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.54a6ab35.css",
-    "static/js/main.a31e4d55.js"
+    "static/css/main.f6ad3d8f.css",
+    "static/js/main.11536e3b.js"
   ]
 }
