@@ -8,7 +8,6 @@ it('Should appear notification when show prop is true', () => {
   const toast = screen.queryByText('Action successfully processed');
   expect(toast).toBeInTheDocument();
   expect(toast).toHaveClass('show');
-  expect(toast).not.toHaveClass('false');
 });
 
 it('Should disappear notification when show prop is false', () => {
@@ -16,5 +15,4 @@ it('Should disappear notification when show prop is false', () => {
   const toast = screen.queryByText('Action successfully processed');
   expect(toast).toBeInTheDocument();
   expect(toast).not.toHaveClass('show');
-  expect(toast).not.toHaveClass('false');
 });
