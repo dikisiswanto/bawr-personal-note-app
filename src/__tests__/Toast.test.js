@@ -3,16 +3,22 @@ import { render, screen } from '@testing-library/react';
 import Toast from 'components/Toast';
 import * as React from 'react';
 
-it('Should appear notification when show prop is true', () => {
-  render(<Toast show message="Action successfully processed" />);
-  const toast = screen.queryByText('Action successfully processed');
-  expect(toast).toBeInTheDocument();
-  expect(toast).toHaveClass('show');
-});
+describe('Toast element', () => {
+  it('Should render toast correctly', () => {
+    render(<Toast message="Catatan berhasil ditambahkan" show />);
+    const toast = screen.getByText('Catatan berhasil ditambahkan');
+    expect(toast).toBeInTheDocument();
+  });
 
-it('Should disappear notification when show prop is false', () => {
-  render(<Toast show={false} message="Action successfully processed" />);
-  const toast = screen.queryByText('Action successfully processed');
-  expect(toast).toBeInTheDocument();
-  expect(toast).not.toHaveClass('show');
+  it('Should appear notification when show prop is true', () => {
+    render(<Toast show message="Catatan berhasil ditambahkan" />);
+    const toast = screen.getByText('Catatan berhasil ditambahkan');
+    expect(toast).toHaveClass('show');
+  });
+
+  it('Should disappear notification when show prop is false', () => {
+    render(<Toast show={false} message="Catatan berhasil ditambahkan" />);
+    const toast = screen.getByText('Catatan berhasil ditambahkan');
+    expect(toast).not.toHaveClass('show');
+  });
 });
