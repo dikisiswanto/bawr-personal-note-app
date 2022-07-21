@@ -8,11 +8,11 @@ import * as React from 'react';
 
 const mockedOnInput = jest.fn(() => {});
 
-function MockedFormInput({ isError }) {
+function MockedFormInput({ isError, type }) {
   return (
     <FormControl label="title" title="Judul">
       <FormInput
-        type="text"
+        type={type}
         label="title"
         className=""
         onInput={mockedOnInput}
@@ -48,5 +48,11 @@ describe('FormInput element', () => {
     render(<MockedFormInput isError />);
     const inputElement = screen.getByRole('textbox', { name: 'Judul' });
     expect(inputElement).toHaveClass('border-red-500');
+  });
+
+  it('Should render input with specified type', async () => {
+    render(<MockedFormInput isError={false} type="password" />);
+    const inputElement = screen.getByLabelText('Judul');
+    expect(inputElement).toHaveAttribute('type', 'password');
   });
 });
